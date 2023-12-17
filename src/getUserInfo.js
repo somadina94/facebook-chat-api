@@ -4,27 +4,31 @@ var utils = require("../utils");
 var log = require("npmlog");
 
 function formatData(data) {
-  var retObj = {};
-
-  for (var prop in data) {
-    if (data.hasOwnProperty(prop)) {
-      var innerObj = data[prop];
-      retObj[prop] = {
-        name: innerObj.name,
-        firstName: innerObj.firstName,
-        vanity: innerObj.vanity,
-        thumbSrc: innerObj.thumbSrc,
-        profileUrl: innerObj.uri,
-        gender: innerObj.gender,
-        type: innerObj.type,
-        isFriend: innerObj.is_friend,
-        isBirthday: !!innerObj.is_birthday
-      };
-    }
-  }
-
-  return retObj;
+  return data;
 }
+
+// function formatData(data) {
+//   var retObj = {};
+
+//   for (var prop in data) {
+//     if (data.hasOwnProperty(prop)) {
+//       var innerObj = data[prop];
+//       retObj[prop] = {
+//         name: innerObj.name,
+//         firstName: innerObj.firstName,
+//         vanity: innerObj.vanity,
+//         thumbSrc: innerObj.thumbSrc,
+//         profileUrl: innerObj.uri,
+//         gender: innerObj.gender,
+//         type: innerObj.type,
+//         isFriend: innerObj.is_friend,
+//         isBirthday: !!innerObj.is_birthday
+//       };
+//     }
+//   }
+
+//   return retObj;
+// }
 
 module.exports = function(defaultFuncs, api, ctx) {
   return function getUserInfo(id, callback) {
